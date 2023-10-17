@@ -1,27 +1,15 @@
-## PyQt6/PySide6-Fluent-Widgets-TextInputDialog
+## PyQt6-Fluent-Widgets-TextInputDialog
 
-`TextInputDialog` is a library for creating text input dialogs based on `PyQt6-Fluent-Widgets` or `PySide6-Fluent-Widgets`. It provides a simple way to create text input dialogs.
+TextInputDialog is a library for creating text input dialogs based on PyQt6-Fluent-Widgets. It provides a simple way to create text input dialogs.
 
-### Installation
-
-Install the `TextInputDialog` library using the following command:
-
-PyQt6:
-
-```python
-pip install PyQt6-Fluent-Widget-TextInputDialog
-```
-
-PySide6:
-
-```
-pip install PySide6-Fluent-Widget-TextInputDialog
-```
 
 ### Usage
 
 ```python
 from qfluentwidgets_textinputdialog import TextInputDialog
+
+# Set the language (default is English)
+TextInputDialog.setLanguage(TextInputDialog.Language.ENGLISH)
 
 # Get the text input
 text, success = TextInputDialog.getText(parent, title=..., placeholder=..., yesButton=..., noButton=..., mode=...)
@@ -39,8 +27,8 @@ text, success = TextInputDialog.getText(parent, title=..., placeholder=..., yesB
 ### Example
 
 ```python
-from PyQt6.QtWidgets import QApplication, QMainWindow
-from qfluentwidgets_textinputdialog import TextInputDialog, PushButton
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
+from qfluentwidgets_textinputdialog import TextInputDialog
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -48,7 +36,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("TextInputDialog Example")
         self.setGeometry(100, 100, 500, 500)
 
-        button = PushButton("Open Dialog", self)
+        button = QPushButton("Open Dialog", self)
         button.setGeometry(100, 100, 200, 50)
         button.clicked.connect(self.open_dialog)
 
