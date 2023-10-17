@@ -14,7 +14,7 @@ pip install PyQt6-Fluent-Widget-TextInputDialog
 
 PySide6:
 
-```
+```python
 pip install PySide6-Fluent-Widget-TextInputDialog
 ```
 
